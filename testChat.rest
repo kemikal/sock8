@@ -1,0 +1,23 @@
+GET HTTP://localhost/api/chat 
+
+###
+
+
+
+
+
+
+
+// CHATROOMS TEST
+
+GET HTTP://localhost/api/chat/chatroom
+//get all chatrooms
+###
+
+POST HTTP://localhost/api/chat/chatroom/create 
+Content-Type: application/json
+
+{
+ "chatroom":
+ // add more info if needed
+}
