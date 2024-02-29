@@ -13,9 +13,13 @@ router.get('/', function(req, res) {
     if(err) console.log(err)
     let newResult = Object.keys(result).length // Checks the lenght of the result
 
+    
     if(newResult == 0) {
       res.status(404).json({message: 'No users exist'})
     } else {
+      result.forEach(user => {
+        delete user.userPassword
+      })
       res.json(result)
       console.log(result)
     }
@@ -23,6 +27,29 @@ router.get('/', function(req, res) {
  })
 });
 
+/**Get specific user by id */
+
+router.post('/:id', (req, res) => {
+  let id = req.params.id;
+
+  connection.connect((err) => {
+    if (err) throw err;
+
+    let query = `SELECT *
+                 FROM users
+                 WHERE userID = ?`;
+    let values = [id]
+
+    connection.query(query, values, (err, result) => {
+      if (err) throw err;
+
+      result.forEach(user => {
+        delete user.userPassword
+      })
+        res.json(result)
+    })
+  })
+})
 
 router.post('/login', (req,res) =>{
 
