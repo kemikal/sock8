@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const connection = require('../lib/conn.js')
+const { randomUUID } = require('crypto');
+
 
 /* GET all users*/ 
 router.get('/', function(req, res) {
@@ -29,7 +31,7 @@ router.get('/', function(req, res) {
 
 /**Get specific user by id */
 
-router.post('/:id', (req, res) => {
+router.get('/:id', (req, res) => {
   let id = req.params.id;
 
   connection.connect((err) => {
@@ -59,5 +61,22 @@ router.post('/login', (req,res) =>{
   
 
 })
+
+// Create a new user
+router.post('/add', function(req, res) {
+  let userName = req.body.username;
+  let userEmail = req.body.email;
+  let userPassword = req.body.password;
+  let userId = randomUUID();
+
+  let sql = "INSERT into users (userId, userName, userEmail, userPassword) VALUES (?, ?, ?, ?)";
+  let values = [userId, userName, userEmail, userPassword];
+
+  connection.query(sql, values, (err, data) => {
+    if (err) console.log("err", data);
+    res.json({ message: "Your account has been created"});
+  })
+})
+
 
 module.exports = router;

@@ -3,7 +3,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors');
-const connection = require('./lib/conn.js')
+const connection = require('./lib/conn.js');
 
 connection.connect(function(err){
     if(err) throw err
@@ -12,6 +12,22 @@ connection.connect(function(err){
 
 
 const usersRouter = require('./routes/users');
+const chatRouter = require('./routes/chat');
+// const server = require('http').server(app);
+// const io = require('socket.io')(server);
+
+// io.on("connection", function(socket) {
+//   console.log("user connected");
+
+//   socket.on("disconnect", function() {
+//       console.log("user disconnected");
+//   })
+
+//   socket.on("chat message", function(message) {
+//       console.log("message", message);
+//       io.emit("chat message", message);
+//   })
+// })
 
 const app = express();
 
@@ -24,5 +40,7 @@ app.use(cors());
 
 
 app.use('/api/users', usersRouter);
+app.use('/api/chat', chatRouter);
+
 
 module.exports = app;
