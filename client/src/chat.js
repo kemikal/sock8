@@ -1,10 +1,18 @@
 import io from 'socket.io-client';
 const socket = io('http://localhost:3001');
 
-export default function printchat(){
-    let sendMsg = document.querySelector("#sendMsg");
-    let sendBtn = document.querySelector("#sendBtn");
-    let chatList = document.querySelector("#chat");
+
+
+export function printchat(){
+
+
+  let messageText = docment.createElement('input');
+  messageText.placeholder = 'Skriv ditt meddelande';
+
+  let sendBtn = document.createElement('button')
+  sendBtn.textContent ='Skicka'
+
+  let chatList = document.createElement('ul');
     
     sendBtn.addEventListener("click", () => {
       console.log("send chat", sendMsg.value);
@@ -21,4 +29,5 @@ export default function printchat(){
       li.innerText = chat ;
       chatList.appendChild(li);
     }
+    app.append(messageText, sendBtn, chatList);
 }
