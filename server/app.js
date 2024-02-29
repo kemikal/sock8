@@ -10,7 +10,7 @@ connection.connect(function(err){
     else console.log("Uppkopplad till databasen");
   })
 
-const indexRouter = require('./routes/index');
+
 const usersRouter = require('./routes/users');
 const chatRouter = require('./routes/chat');
 // const server = require('http').server(app);
@@ -38,7 +38,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
-app.use('/', indexRouter);
+
 app.use('/api/users', usersRouter);
 app.use('/api/chat', chatRouter);
 
