@@ -1,4 +1,3 @@
-//import { printLogout } from "./printLogOut";
 import { printchat } from "./chat";
 import { formDiv } from "./printLogInBtn";
 
@@ -27,7 +26,6 @@ export function getLogIn(email, password, message) {
            localStorage.setItem('user', setUser)
 
             printchat()
-            //printLogout()
         }
     })
 }

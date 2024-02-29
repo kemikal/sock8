@@ -1,18 +1,18 @@
-import { log } from "debug/src/browser.js";
 import { logInForm, formDiv } from "./printLogInBtn.js";
-import { getLogIn } from "./getLogIn.js";
+const app = document.getElementById("app");
 
 export function logOutBtn() {
     
     let logOutBtn = document.createElement('button');
     logOutBtn.textContent = "Logga ut";
     logOutBtn.classList.add('logOutBtn');
-    formDiv.appendChild(logOutBtn);
+    formDiv.append(logOutBtn);
 
     logOutBtn.addEventListener('click', () => {
         console.log("click");
 
-        document.body.innerHTML = "";
+        app.innerHTML = "";
+        localStorage.clear();
 
         let loggedOutMessage = document.createElement('h1');
         loggedOutMessage.textContent = "Du är nu utloggad.";
@@ -28,7 +28,15 @@ export function logOutBtn() {
 
         backToLogin.addEventListener('click', () => {
             console.log("click");
-            console.log(logInForm());
+            document.body.removeChild(loggedOutMessage);
+            document.body.removeChild(logInAgainMsg);
+            document.body.removeChild(backToLogin);
+            logInForm();
+            //formDiv.append(logInForm());
+            //app.appendChild(formDiv);
+            console.log(app);
         })
+            
     })
+    
 }
