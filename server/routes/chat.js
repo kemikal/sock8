@@ -10,7 +10,7 @@ const io = require('socket.io')(server, {
 })
 
 io.on('connection', function(socket) {
-    console.log("lyckad kopplad", socket);
+    //console.log("lyckad kopplad", socket);
 
     socket.emit("chat", "hello world")
 

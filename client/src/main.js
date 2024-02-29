@@ -1,5 +1,13 @@
 import './styles/style.css';
+import { printchat } from './chat';
+import { logInForm } from './printLogInBtn';
 
-import printchat from './chat';
+export let app = document.querySelector('#app');
 
-printchat()
+if(localStorage.getItem('user')){
+    printchat()
+} else {
+    logInForm()
+}
+
+//localStorage.clear()
