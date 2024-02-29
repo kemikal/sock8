@@ -1,13 +1,14 @@
 import io from 'socket.io-client';
-const socket = io('http://localhost:3001');
+import { formDiv } from './printLogInBtn';
+
 
 
 
 export function printchat(){
+  const socket = io('http://localhost:3001');
 
-
-  let messageText = docment.createElement('input');
-  messageText.placeholder = 'Skriv ditt meddelande';
+  let sendMsg = document.createElement('input');
+  sendMsg.placeholder = 'Skriv ditt meddelande';
 
   let sendBtn = document.createElement('button')
   sendBtn.textContent ='Skicka'
@@ -29,5 +30,7 @@ export function printchat(){
       li.innerText = chat ;
       chatList.appendChild(li);
     }
-    app.append(messageText, sendBtn, chatList);
+
+    formDiv.append(chatList, sendMsg, sendBtn)
+    app.appendChild(formDiv);
 }
