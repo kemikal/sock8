@@ -1,5 +1,5 @@
 import { logInForm, formDiv } from "./printLogInBtn.js";
-const app = document.getElementById("app");
+
 
 export function logOutBtn() {
     
