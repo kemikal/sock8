@@ -1,7 +1,6 @@
 import io from 'socket.io-client';
 import { formDiv } from './printLogInBtn';
-
-
+import { logOutBtn } from './printLogOutBtn.js';
 
 
 export function printchat(){
@@ -12,6 +11,7 @@ export function printchat(){
 
   let sendBtn = document.createElement('button')
   sendBtn.textContent ='Skicka'
+
 
   let chatList = document.createElement('ul');
     

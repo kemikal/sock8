@@ -1,1 +1,1 @@
-.app .form-div{padding-top:100px;display:flex;flex-direction:column}.app .form-div input{height:40px;width:350px;background-color:#d3dbc5;border:none;border-radius:5px;outline:none;margin:5px}.app a{padding-top:20px;text-align:center;text-decoration:underline}
+.app .form-div{padding-top:100px;display:flex;flex-direction:column}.app .form-div input{height:40px;width:350px;background-color:#d3dbc5;border:none;border-radius:5px;outline:none;margin:5px}.app .form-div .logOutBtn{width:30px}.app a{padding-top:20px;text-align:center;text-decoration:underline}

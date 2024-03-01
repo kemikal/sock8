@@ -13,6 +13,10 @@
             outline: none;
             margin: 5px;
         }
+
+        .logOutBtn {
+            width: 100px;
+        }
     }
 
     a {
@@ -21,6 +25,7 @@
         text-decoration: underline;
     }
 }
+
 
 @mixin input {
     height: 40px;
