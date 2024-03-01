@@ -17,6 +17,26 @@ export function printSignUp() {
     inputPassword.type = 'password';
     inputPassword.placeholder = 'Password';
 
+    let textColourInput = document.createElement('input');
+    textColourInput.placeholder = "Choose your colour";
+    textColourInput.setAttribute('list', 'colorOptions');
+
+    let textColourOptions = document.createElement('datalist');
+    textColourOptions.id = 'colorOptions';
+
+    let blueTextColour = document.createElement('option');
+    blueTextColour.value = 'Blå';
+
+    let redTextColour = document.createElement('option');
+    redTextColour.value = 'Röd';
+
+    let greenTextColour = document.createElement('option');
+    greenTextColour.value = 'Grön';
+
+    textColourOptions.appendChild(blueTextColour);
+    textColourOptions.appendChild(redTextColour);
+    textColourOptions.appendChild(greenTextColour);
+
     let message = document.createElement('p');
 
     let signUpBtn = document.createElement('button');
@@ -31,8 +51,9 @@ export function printSignUp() {
     })
 
     signUpBtn.addEventListener('click', () => {
-        getSignUp(inputUserName.value, inputEmail.value, inputPassword.value, message)
+        getSignUp(inputUserName.value, inputEmail.value, inputPassword.value, textColourInput.value, message)
     })
-    formDiv.append(heading, inputUserName, inputEmail,inputPassword, message , signUpBtn, goToStartPageBtn);
+    formDiv.append(heading, inputUserName, inputEmail, inputPassword, textColourInput, textColourOptions, message , signUpBtn, goToStartPageBtn);
     app.appendChild(formDiv)
+    
 }
