@@ -1,4 +1,4 @@
-import { formDiv, logInForm } from './printLogInBtn'
+import { formDiv, logInForm } from './printLogInBtn.js'
 
 export function getSignUp(username, email, password, textColour, message) {
     let regexpEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;

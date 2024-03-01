@@ -1,5 +1,5 @@
-import { formDiv, logInForm } from "./printLogInBtn"
-import { getSignUp } from "./getSignUp";
+import { formDiv, logInForm } from "./printLogInBtn.js"
+import { getSignUp } from "./getSignUp.js";
 
 export function printSignUp() {
     formDiv.innerHTML = '';

@@ -1,6 +1,6 @@
 import io from 'socket.io-client';
-import { formDiv } from './printLogInBtn';
-import { logOutBtn } from './printLogOutBtn.js';
+import { formDiv } from './printLogInBtn.js';
+
 
 
 export function printchat(){

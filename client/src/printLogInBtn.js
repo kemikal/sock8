@@ -1,6 +1,6 @@
 
-import { getLogIn } from "./getLogIn";
-import { printSignUp } from "./printCreateUser";
+import { getLogIn } from "./getLogIn.js";
+import { printSignUp } from "./printCreateUser.js";
 const app = document.getElementById("app");
 
 

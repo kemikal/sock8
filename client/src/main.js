@@ -1,6 +1,6 @@
 import './styles/style.css'
-import { printchat } from './chat';
-import { logInForm } from './printLogInBtn';
+import { printchat } from './chat.js';
+import { logInForm } from './printLogInBtn.js';
 import { logOutBtn } from './printLogOutBtn.js';
 
 export let app = document.querySelector('#app');
