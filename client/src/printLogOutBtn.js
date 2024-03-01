@@ -32,9 +32,6 @@ export function logOutBtn() {
             document.body.removeChild(logInAgainMsg);
             document.body.removeChild(backToLogin);
             logInForm();
-            //formDiv.append(logInForm());
-            //app.appendChild(formDiv);
-            console.log(app);
         })
             
     })

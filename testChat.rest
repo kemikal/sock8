@@ -1,4 +1,4 @@
-GET HTTP://localhost:3001/api/chat 
+GET HTTP://localhost:3000/api/chat 
 
 ###
 
@@ -10,11 +10,11 @@ GET HTTP://localhost:3001/api/chat
 
 // CHATROOMS TEST
 
-GET HTTP://localhost:3001/api/chat/chatroom
+GET HTTP://localhost:3000/api/chat/chatroom
 //get all chatrooms
 ###
 
-POST HTTP://localhost:3001/api/chat/chatroom/create 
+POST HTTP://localhost:3000/api/chat/chatroom/create 
 Content-Type: application/json
 
 {

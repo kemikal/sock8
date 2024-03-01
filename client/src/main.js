@@ -7,10 +7,9 @@ export let app = document.querySelector('#app');
 
 if(localStorage.getItem('user')){
     printchat()
-} else {
     logOutBtn();
-    //logInForm()
-    printchat()
+} else {
+    logInForm()
 
 }
 
