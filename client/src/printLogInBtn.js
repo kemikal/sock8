@@ -1,7 +1,7 @@
 
 import { getLogIn } from "./getLogIn.js";
 import { printSignUp } from "./printCreateUser.js";
-const app = document.getElementById("app");
+
 
 
 export let formDiv = document.createElement('div');
