@@ -1,5 +1,6 @@
 import { printchat } from "./chat";
 import { formDiv } from "./printLogInBtn";
+import { logOutBtn } from "./printLogOutBtn.js";
 
 
 export function getLogIn(email, password, message) {
@@ -24,7 +25,7 @@ export function getLogIn(email, password, message) {
             formDiv.innerHTML = '';
            let setUser = JSON.stringify(data)
            localStorage.setItem('user', setUser)
-
+            logOutBtn()
             printchat()
         }
     })

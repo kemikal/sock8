@@ -6,8 +6,8 @@ import { logOutBtn } from './printLogOutBtn.js';
 export let app = document.querySelector('#app');
 
 if(localStorage.getItem('user')){
-    printchat()
     logOutBtn();
+    printchat()
 } else {
     logInForm()
 
