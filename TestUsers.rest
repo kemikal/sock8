@@ -16,9 +16,9 @@ POST HTTP://localhost:3000/api/users/add
 Content-Type: application/json
 
 {
-    "username": ,
-    "email": ,
-    "password":
+    "userName": ,
+    "userEmail": ,
+    "userPassword":
 }
 
 ###
