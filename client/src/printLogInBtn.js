@@ -1,13 +1,14 @@
 
 import { getLogIn } from "./getLogIn.js";
 import { printSignUp } from "./printCreateUser.js";
+import { formDiv } from "./main.js";
 
 
 
-export let formDiv = document.createElement('div');
-formDiv.setAttribute('class', 'form-div')
+
 
 export function logInForm() {
+    formDiv.setAttribute('class', 'form-div')
 
     formDiv.innerHTML = '';
     let heading = document.createElement('h1')
