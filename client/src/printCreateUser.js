@@ -1,5 +1,5 @@
 import { logInForm } from "./printLogInBtn.js"
-import { formDiv } from './main';
+import { formDiv } from './main.js';
 import { getSignUp } from "./getSignUp.js";
 
 export function printSignUp() {

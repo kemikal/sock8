@@ -1,5 +1,5 @@
 import { printchat } from "./chat.js";
-import { formDiv } from './main';
+import { formDiv } from './main.js';
 import { logOutBtn } from "./printLogOutBtn.js";
 
 
