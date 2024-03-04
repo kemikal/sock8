@@ -4,6 +4,8 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors');
 const connection = require('./lib/conn.js');
+var port = normalizePort(process.env.PORT || '3000');
+app.set('port', port);
 
 connection.connect(function(err){
     if(err) throw err
@@ -15,6 +17,7 @@ const usersRouter = require('./routes/users');
 const chatRouter = require('./routes/chat');
 
 const app = express();
+
 
 app.use(logger('dev'));
 app.use(express.json());
