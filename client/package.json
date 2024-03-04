@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
-    "preview": "vite preview",
-    "start": "node src/main.js"
+    "preview": "vite preview"
+    
     
   },
   "devDependencies": {
