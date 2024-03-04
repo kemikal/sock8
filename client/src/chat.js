@@ -1,5 +1,5 @@
 import io from 'socket.io-client';
-import { formDiv } from './main';
+import { formDiv } from './main.js';
 
 
 
