@@ -68,9 +68,11 @@ router.post('/login', (req,res) =>{
     let values = [userEmail, userPassword];
 
     connection.query(query, values, (err, result) =>{
+      console.log(result)
       if (err) console.log("err", err);
 
-      if (result.length > 0){
+      let newResult = Object.keys(result).length
+      if (newResult == 0){
         res.json(result[0]);
       }else {
         res.status(401).json({ error: "Fel användarnamn eller lösenord." });
