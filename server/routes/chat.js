@@ -24,5 +24,5 @@ io.on('connection', function(socket) {
         console.log("Användare frånkopplad");
     })
 })
-
+app.listen(process.env.PORT || '3000')
 module.exports = router;

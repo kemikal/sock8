@@ -19,7 +19,7 @@ const chatRouter = require('./routes/chat');
 
 const app = express();
 
-app.listen(process.env.PORT || '3000')
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
