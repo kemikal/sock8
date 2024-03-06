@@ -31,5 +31,5 @@ app.use(cors());
 app.use('/api/users', usersRouter);
 app.use('/api/chat', chatRouter);
 
-
+app.listen(process.env.PORT || '3000')
 module.exports = app;
