@@ -25,5 +25,4 @@ io.on('connection', function(socket) {
     })
 })
 
-server.listen(3001);
 module.exports = router;
