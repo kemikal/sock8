@@ -1,30 +1,55 @@
-/*const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
+/*var express = require('express');
+const router = express.Router();
+const cors = require('cors')();*/
+const express = require('express');
+const app = require('express')();
+const server = require('http').createServer(app);
+//const connection = require('./lib/conn.js');
 const logger = require('morgan');
-const cors = require('cors');
-const connection = require('./lib/conn.js');
-require('dotenv').config();
+const cors = require('cors')
+
+/*
+connection.connect(function(err){
+    if(err) throw err
+    else console.log("Uppkopplad till databasen");
+  })
+*/
 
 
+const io = require('socket.io')(server, {
+    cors: {
+        origin:'*',
+        methods: ['GET', ' POST']
+    }
+})
 
-  const chatRouter = require('./routes/chat');
+//const usersRouter = require('./routes/users');
 
-  const app = express();
-  
-  
-  app.listen(process.env.PORT || '3000');
-  app.use(logger('dev'));
-  app.use(express.json());
-  app.use(express.urlencoded({ extended: false }));
-  app.use(cookieParser());
-  app.use(express.static(path.join(__dirname, 'public')));
-  app.use(cors());
-
+app.use(cors());
+app.use(logger('dev'));
+app.use(express.json());
 
 
-  app.use('/api/chat', chatRouter);
+app.get('/', (req, res) => {
 
+    res.send('detta funkar')
+})
 
+//app.use('/api/users', usersRouter);
 
-module.exports = app;*/
+io.on('connection', function(socket) {
+    //console.log("lyckad kopplad", socket);
+
+    socket.emit("chat", "hello world")
+
+    socket.on("chat", (arg) =>{
+        console.log("kommande chat", arg);
+        io.emit("chat", arg);
+    })
+
+    socket.on("disconnect", function () {
+        console.log("Användare frånkopplad");
+    })
+})
+
+server.listen(process.env.PORT || '3000');
