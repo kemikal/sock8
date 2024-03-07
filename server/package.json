@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon chat.js",
-    "build": "node chat.js"
+    "dev": "nodemon chat.js",
+    "start": "node chat.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
