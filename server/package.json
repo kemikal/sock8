@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "nodemon chat.js",
-    "start": "node chat.js"
+    "start": "node chat.js",
+    "build": "node chat.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
