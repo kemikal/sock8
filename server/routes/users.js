@@ -3,6 +3,9 @@ const router = express.Router();
 const connection = require('../lib/conn.js')
 const { randomUUID } = require('crypto');
 
+router.get("/test", (req, res) => {
+  res.send("test")
+})
 
 /* GET all users*/ 
 router.get('/', function(req, res) {
