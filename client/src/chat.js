@@ -4,7 +4,7 @@ import { formDiv } from './main.js';
 
 
 export function printchat(){
-  const socket = io('http://localhost:3001');
+  const socket = io('http://localhost:3000');
 
   let sendMsg = document.createElement('input');
   sendMsg.placeholder = 'Skriv ditt meddelande';
