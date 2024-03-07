@@ -2,11 +2,11 @@
   "name": "socket",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node app.js",
-    "start": "node app.js"
+    "build": "node server.js",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
